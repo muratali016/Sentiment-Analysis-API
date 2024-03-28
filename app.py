@@ -2,6 +2,13 @@ from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 from textblob import TextBlob
 #import uvicorn
+from youtube_transcript_api import YouTubeTranscriptApi
+from langchain_community.document_loaders import YoutubeLoader
+from openai import OpenAI
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.vectorstores import FAISS
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+import re
 
 app = FastAPI(title="Sentiment Analysis API")
 
